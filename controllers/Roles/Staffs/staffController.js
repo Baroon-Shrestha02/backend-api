@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import User from "../../../models/Usermodel.js";
+import User from "../../../models/userModel.js";
 import AppError from "../../../utils/appError.js";
 import asyncErrorHandler from "../../../utils/asyncErrorHandler.js";
 

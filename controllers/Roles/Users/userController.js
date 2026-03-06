@@ -1,5 +1,5 @@
 import cloudinary from "cloudinary";
-import User from "../../../models/Usermodel.js";
+import User from "../../../models/userModel.js";
 import asyncErrorHandler from "../../../utils/asyncErrorHandler.js";
 import AppError from "../../../utils/appError.js";
 import { uploadImages } from "../../../utils/imageUploader.js";
