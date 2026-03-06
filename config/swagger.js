@@ -5,6 +5,11 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const baseUrl =
+  process.env.PUBLIC_API_BASE_URL ||
+  process.env.RENDER_EXTERNAL_URL ||
+  `http://localhost:${process.env.PORT || 3000}`;
+
 const options = {
   definition: {
     openapi: "3.0.0",
@@ -15,12 +20,8 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:3000",
-        description: "Development server",
-      },
-      {
-        url: "https://gharsewa-api.com",
-        description: "Hosted testing server",
+        url: baseUrl,
+        description: "Current server",
       },
     ],
     components: {
@@ -44,7 +45,7 @@ const options = {
       { name: "Booking", description: "Job booking and reservations" },
     ],
   },
-  apis: [path.join(__dirname, "../Routes/*.js")],
+  apis: [path.join(__dirname, "../routes/**/*.js")],
 };
 
 const swaggerSpec = swaggerJSDoc(options);
