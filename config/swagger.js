@@ -20,8 +20,12 @@ const options = {
     },
     servers: [
       {
-        url: baseUrl,
-        description: "Current server",
+        url: "http://localhost:3000",
+        description: "Development server",
+      },
+      {
+        url: "https://backend-api-2-to7a.onrender.com",
+        description: "Hosted testing server",
       },
     ],
     components: {
